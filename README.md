@@ -1,4 +1,4 @@
-# effortless-android
+# Effortless Android
 A collection of Kotlin extension functions that make Android development a breeze.
 
 ### Requirements
