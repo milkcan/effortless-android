@@ -1,5 +1,5 @@
 # effortless-android
-A collection of Kotlin extension methods that make Android development a breeze.
+A collection of Kotlin extension functions that make Android development a breeze.
 
 ### Requirements
 Kotlin 1.1+ -- older versions should be compatible but have not been tested.
@@ -18,3 +18,4 @@ compile 'io.milkcan:effortless-android:0.0.1'
 ```
 
 ### License
+[See license here](https://github.com/bachhuberdesign/effortless-android/blob/master/LICENSE)
