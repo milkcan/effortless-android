@@ -20,3 +20,28 @@ import android.view.ViewGroup
 fun ViewGroup.inflate(layoutRes: Int): View {
     return LayoutInflater.from(context).inflate(layoutRes, this, false)
 }
+
+/**
+ * @return True if ViewGroup contains [childView].
+ */
+fun ViewGroup.contains(childView: View): Boolean {
+    return indexOfChild(childView) != -1
+}
+
+/**
+ *
+ */
+inline fun ViewGroup.forEach(action: (View) -> Unit) {
+    (0 until childCount).forEach { i ->
+        action(getChildAt(i))
+    }
+}
+
+/**
+ *
+ */
+inline fun ViewGroup.forEachIndexed(action: (Int, View) -> Unit) {
+    (0 until childCount).forEach { i ->
+        action(i, getChildAt(i))
+    }
+}

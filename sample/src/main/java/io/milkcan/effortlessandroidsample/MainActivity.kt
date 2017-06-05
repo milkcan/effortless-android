@@ -1,11 +1,10 @@
 package io.milkcan.effortlessandroidsample
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.view.View
+import io.milkcan.effortlessandroid.d
+import io.milkcan.effortlessandroid.getDrawableCompat
 import io.milkcan.effortlessandroid.toastLong
 
 class MainActivity : AppCompatActivity() {

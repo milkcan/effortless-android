@@ -4,6 +4,8 @@ package io.milkcan.effortlessandroid
 
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.drawable.Drawable
+import android.net.ConnectivityManager
 import android.support.v4.content.ContextCompat
 import android.widget.Toast
 
@@ -77,8 +79,35 @@ fun Context.pxToDp(px: Int): Float {
  * Checks if permission has been granted or not.
  *
  * @param permission Name of the permission to check (i.e. Manifest.permission.CAMERA).
- * @return True if permission is granted, false if it has not yet been granted.
+ * @return True if permission has been granted.
  */
 fun Context.isPermissionGranted(permission: String): Boolean {
     return ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
+}
+
+/**
+ * @param resourceId
+ * @return A single color value in the form 0xAARRGGBB.
+ */
+fun Context.getColorCompat(resourceId: Int): Int {
+    return ContextCompat.getColor(this, resourceId)
+}
+
+/**
+ * @param resourceId
+ * @return
+ */
+fun Context.getDrawableCompat(resourceId: Int): Drawable {
+    return ContextCompat.getDrawable(this, resourceId)
+}
+
+/**
+ * Checks if network is connected or currently in the process of connecting.
+ *
+ * @return True if the network is connected or connecting.
+ */
+fun Context.isNetworkConnectedOrConnecting(): Boolean {
+    val manager = this.applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+    return manager.activeNetworkInfo != null && manager.activeNetworkInfo.isConnectedOrConnecting
 }
