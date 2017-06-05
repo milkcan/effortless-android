@@ -4,9 +4,13 @@ package io.milkcan.effortlessandroid
 
 import android.content.Context
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
+import android.os.Build
+import android.support.annotation.RequiresApi
 import android.support.v4.content.ContextCompat
+import android.view.View
 import android.widget.Toast
 
 /**
@@ -76,6 +80,16 @@ fun Context.pxToDp(px: Int): Float {
 }
 
 /**
+ * Converts absolute pixels (px) to scale-independent pixels (sp).
+ * https://stackoverflow.com/questions/2025282/what-is-the-difference-between-px-dp-dip-and-sp-on-android
+ *
+ * @param px Absolute pixels (px) to convert.
+ */
+fun Context.pxToSp(px: Int): Float {
+    return (px * resources.displayMetrics.scaledDensity)
+}
+
+/**
  * Checks if permission has been granted or not.
  *
  * @param permission Name of the permission to check (i.e. Manifest.permission.CAMERA).
@@ -111,3 +125,25 @@ fun Context.isNetworkConnectedOrConnecting(): Boolean {
 
     return manager.activeNetworkInfo != null && manager.activeNetworkInfo.isConnectedOrConnecting
 }
+
+/**
+ * @return
+ */
+fun Context.isLandscape() = this.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+
+/**
+ * @return
+ */
+fun Context.isPortrait() = this.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
+
+/**
+ * @return
+ */
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+fun Context.isLeftToRight() = this.resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_LTR
+
+/**
+ * @return
+ */
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+fun Context.isRightToLeft() = this.resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL

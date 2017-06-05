@@ -23,12 +23,16 @@ fun ViewGroup.inflate(layoutRes: Int): View {
 }
 
 /**
+ * @param position
+ * @return
+ */
+operator fun ViewGroup.get(position: Int): View? = getChildAt(position)
+
+/**
  * @param childView
  * @return True if ViewGroup contains [childView].
  */
-fun ViewGroup.contains(childView: View): Boolean {
-    return indexOfChild(childView) != -1
-}
+fun ViewGroup.contains(childView: View): Boolean = indexOfChild(childView) != -1
 
 /**
  * @param action
