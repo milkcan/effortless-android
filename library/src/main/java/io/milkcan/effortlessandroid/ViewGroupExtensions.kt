@@ -15,13 +15,15 @@ import android.view.ViewGroup
  */
 
 /**
- *
+ * @param layoutRes
+ * @return
  */
 fun ViewGroup.inflate(layoutRes: Int): View {
     return LayoutInflater.from(context).inflate(layoutRes, this, false)
 }
 
 /**
+ * @param childView
  * @return True if ViewGroup contains [childView].
  */
 fun ViewGroup.contains(childView: View): Boolean {
@@ -29,7 +31,7 @@ fun ViewGroup.contains(childView: View): Boolean {
 }
 
 /**
- *
+ * @param action
  */
 inline fun ViewGroup.forEach(action: (View) -> Unit) {
     (0 until childCount).forEach { i ->
@@ -38,7 +40,7 @@ inline fun ViewGroup.forEach(action: (View) -> Unit) {
 }
 
 /**
- *
+ * @param action
  */
 inline fun ViewGroup.forEachIndexed(action: (Int, View) -> Unit) {
     (0 until childCount).forEach { i ->
