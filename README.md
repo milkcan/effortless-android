@@ -21,7 +21,7 @@ maven {
 
 and the dependency to your module level build.gradle:
 ```
-compile 'io.milkcan:effortless-android:0.0.2'
+compile 'io.milkcan:effortless-android:0.0.3'
 ```
 
 ## License

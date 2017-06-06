@@ -13,7 +13,8 @@ import android.database.Cursor
  */
 
 /**
- *
+ * @param columnName
+ * @return
  */
 fun Cursor.getBooleanFromColumn(columnName: String): Boolean {
     val columnValue = getInt(getColumnIndex(columnName))
@@ -26,42 +27,48 @@ fun Cursor.getBooleanFromColumn(columnName: String): Boolean {
 }
 
 /**
- *
+ * @param columnName
+ * @return
  */
 fun Cursor.getIntFromColumn(columnName: String): Int {
     return getInt(getColumnIndex(columnName))
 }
 
 /**
- *
+ * @param columnName
+ * @return
  */
 fun Cursor.getLongFromColumn(columnName: String): Long {
     return getLong(getColumnIndex(columnName))
 }
 
 /**
- *
+ * @param columnName
+ * @return
  */
 fun Cursor.getStringFromColumn(columnName: String): String {
     return getString(getColumnIndex(columnName))
 }
 
 /**
- *
+ * @param columnName
+ * @return
  */
 fun Cursor.getDoubleFromColumn(columnName: String): Double {
     return getDouble(getColumnIndex(columnName))
 }
 
 /**
- *
+ * @param columnName
+ * @return
  */
 fun Cursor.getFloatFromColumn(columnName: String): Float {
     return getFloat(getColumnIndex(columnName))
 }
 
 /**
- *
+ * @param columnName
+ * @return
  */
 fun Cursor.getBlobFromColumn(columnName: String): ByteArray {
     return getBlob(getColumnIndex(columnName))

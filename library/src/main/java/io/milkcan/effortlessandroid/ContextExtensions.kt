@@ -50,7 +50,8 @@ fun Context.toastLong(message: String) {
 }
 
 /**
- *
+ * @param key
+ * @return
  */
 fun Context.getStringResourceByName(key: String): String {
     val resourceId = this.resources.getIdentifier(key, "string", this.packageName)

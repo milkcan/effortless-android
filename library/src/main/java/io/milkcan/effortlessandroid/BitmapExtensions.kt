@@ -14,7 +14,9 @@ import android.graphics.Matrix
  */
 
 /**
- *
+ * @param maxWidth
+ * @param maxHeight
+ * @return
  */
 fun Bitmap.scaleAndMaintainAspectRatio(maxWidth: Int, maxHeight: Int): Bitmap {
     if (maxHeight > 0 && maxWidth > 0) {
