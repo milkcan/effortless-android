@@ -11,8 +11,8 @@ import io.reactivex.schedulers.Schedulers
  * A collection of helpful functions that extend [Observable].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 0.0.5
- * @since 0.0.5
+ * @version 1.0.0
+ * @since 1.0.0
  */
 
 inline fun <T> Observable<T>.defaultThreads(): Observable<T> {

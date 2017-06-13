@@ -21,7 +21,16 @@ maven {
 
 and the dependency to your module level build.gradle:
 ```
-compile 'io.milkcan:effortless-android:0.0.4'
+compile 'io.milkcan:effortless-android:1.0.0'
+```
+
+(OPTIONAL) RxJava 2 extensions:
+```
+compile 'io.milkcan:effortless-android-rx:1.0.0'
+
+// Both RxJava 2 and RxAndroid are required to use Effortless Android Rx
+compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 ```
 
 ## License

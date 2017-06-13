@@ -12,15 +12,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
-version = '0.0.4'
+version = '1.0.0'
 
 publishing {
     publications {
         Production(MavenPublication) {
-            artifact("$buildDir/outputs/aar/library-release.aar")
+            artifact("$buildDir/outputs/aar/effortless-android-rx-release.aar")
             groupId 'io.milkcan'
-            artifactId 'effortless-android'
-            version '0.0.4'
+            artifactId 'effortless-android-rx'
+            version '1.0.0'
         }
     }
 }
@@ -30,7 +30,7 @@ bintray {
     key = getLocalProperty("bintray.apikey")
     pkg {
         repo = 'maven'
-        name = 'effortless-android'
+        name = 'effortless-android-rx'
         licenses = ['Apache-2.0']
         desc = 'A collection of Kotlin extension functions for Android development with RxJava 2.'
         websiteUrl = "https://milkcan.io/"
