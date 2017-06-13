@@ -1,1 +1,1 @@
-include ':sample', ':library'
+include ':sample', ':effortless-android-base', ':effortless-android-rx'
