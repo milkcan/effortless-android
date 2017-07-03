@@ -1,4 +1,5 @@
 @file:JvmName("LogExtensions")
+@file:Suppress("NOTHING_TO_INLINE")
 
 package io.milkcan.effortlessandroid
 
@@ -16,7 +17,7 @@ import android.util.Log
  * @param tag
  * @param message
  */
-fun v(tag: String, message: String) {
+inline fun v(tag: String, message: String) {
     Log.v(tag, message)
 }
 
@@ -24,7 +25,7 @@ fun v(tag: String, message: String) {
  * @param tag
  * @param message
  */
-fun d(tag: String, message: String) {
+inline fun d(tag: String, message: String) {
     Log.d(tag, message)
 }
 
@@ -32,7 +33,7 @@ fun d(tag: String, message: String) {
  * @param tag
  * @param message
  */
-fun i(tag: String, message: String) {
+inline fun i(tag: String, message: String) {
     Log.i(tag, message)
 }
 
@@ -40,7 +41,7 @@ fun i(tag: String, message: String) {
  * @param tag
  * @param message
  */
-fun w(tag: String, message: String) {
+inline fun w(tag: String, message: String) {
     Log.w(tag, message)
 }
 
@@ -48,56 +49,81 @@ fun w(tag: String, message: String) {
  * @param tag
  * @param message
  */
-fun e(tag: String, message: String) {
+inline fun e(tag: String, message: String) {
     Log.e(tag, message)
+}
+
+/**
+ *  @param tag
+ *  @param message
+ *  @param throwable
+ */
+inline fun e(tag: String, message: String, throwable: Throwable) {
+    Log.e(tag, message, throwable)
 }
 
 /**
  * @param tag
  * @param message
  */
-fun wtf(tag: String, message: String) {
+inline fun wtf(tag: String, message: String) {
     Log.wtf(tag, message)
 }
 
 /**
  * @param message
  */
-fun Any.v(message: String) {
+inline fun Any.v(message: String) {
     Log.v(this::class.java.name, message)
 }
 
 /**
  * @param message
  */
-fun Any.d(message: String) {
+inline fun Any.d(message: String) {
     Log.d(this::class.java.name, message)
 }
 
 /**
  * @param message
  */
-fun Any.i(message: String) {
+inline fun Any.i(message: String) {
     Log.i(this::class.java.name, message)
 }
 
 /**
  * @param message
  */
-fun Any.w(message: String) {
+inline fun Any.w(message: String) {
     Log.w(this::class.java.name, message)
 }
 
 /**
  * @param message
  */
-fun Any.e(message: String) {
+inline fun Any.e(message: String) {
     Log.e(this::class.java.name, message)
 }
 
 /**
  * @param message
+ * @param throwable
  */
-fun Any.wtf(message: String) {
+inline fun Any.e(message: String, throwable: Throwable) {
+    Log.e(this::class.java.name, message, throwable)
+}
+
+/**
+ * @param message
+ */
+inline fun Any.wtf(message: String) {
     Log.wtf(this::class.java.name, message)
+}
+
+/**
+ * @param message
+ * @param throwable
+ */
+inline fun Any.wtf(message: String, throwable: Throwable) {
+    Log.wtf(this::class.java.name, message, throwable)
 }

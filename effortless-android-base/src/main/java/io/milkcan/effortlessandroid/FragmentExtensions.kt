@@ -1,5 +1,6 @@
 @file:JvmName("FragmentExtensions")
 @file:Suppress("NOTHING_TO_INLINE", "unused")
+
 package io.milkcan.effortlessandroid
 
 import android.app.Fragment
@@ -15,19 +16,39 @@ import android.app.Fragment
 /**
  * @param resourceId
  */
-inline fun Fragment.toast(resourceId: Int) = activity.toast(resourceId)
-
-/**
- * @param message
- */
-inline fun Fragment.toast(message: String) = activity.toast(message)
+inline fun Fragment.toast(resourceId: Int) = activity?.toast(resourceId)
 
 /**
  * @param resourceId
  */
-inline fun Fragment.toastLong(resourceId: Int) = activity.toast(resourceId)
+inline fun android.support.v4.app.Fragment.toast(resourceId: Int) = activity?.toast(resourceId)
 
 /**
  * @param message
  */
-inline fun Fragment.toastLong(message: String) = activity.toast(message)
+inline fun Fragment.toast(message: String) = activity?.toast(message)
+
+/**
+ * @param message
+ */
+inline fun android.support.v4.app.Fragment.toast(message: String) = activity?.toast(message)
+
+/**
+ * @param resourceId
+ */
+inline fun Fragment.toastLong(resourceId: Int) = activity?.toast(resourceId)
+
+/**
+ * @param resourceId
+ */
+inline fun android.support.v4.app.Fragment.toastLong(resourceId: Int) = activity?.toast(resourceId)
+
+/**
+ * @param message
+ */
+inline fun Fragment.toastLong(message: String) = activity?.toast(message)
+
+/**
+ * @param message
+ */
+inline fun android.support.v4.app.Fragment.toastLong(message: String) = activity?.toast(message)
