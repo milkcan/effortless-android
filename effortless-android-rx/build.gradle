@@ -12,7 +12,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
-version = '1.0.0'
+version = '1.0.1'
 
 publishing {
     publications {
@@ -20,7 +20,7 @@ publishing {
             artifact("$buildDir/outputs/aar/effortless-android-rx-release.aar")
             groupId 'io.milkcan'
             artifactId 'effortless-android-rx'
-            version '1.0.0'
+            version '1.0.1'
         }
     }
 }
