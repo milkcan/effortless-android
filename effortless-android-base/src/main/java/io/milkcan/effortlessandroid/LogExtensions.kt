@@ -71,6 +71,14 @@ inline fun wtf(tag: String, message: String) {
 }
 
 /**
+ * @param tag
+ * @param message
+ */
+inline fun wtf(tag: String, message: String, throwable: Throwable) {
+    Log.wtf(tag, message, throwable)
+}
+
+/**
  * @param message
  */
 inline fun Any.v(message: String) {

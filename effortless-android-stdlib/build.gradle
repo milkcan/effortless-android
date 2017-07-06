@@ -17,9 +17,9 @@ version = '1.0.2'
 publishing {
     publications {
         Production(MavenPublication) {
-            artifact("$buildDir/outputs/aar/effortless-android-rx-release.aar")
+            artifact("$buildDir/outputs/aar/effortless-android-stdlib-release.aar")
             groupId 'io.milkcan'
-            artifactId 'effortless-android-rx'
+            artifactId 'effortless-android-stdlib'
             version '1.0.2'
         }
     }
@@ -30,9 +30,9 @@ bintray {
     key = getLocalProperty("bintray.apikey")
     pkg {
         repo = 'maven'
-        name = 'effortless-android-rx'
+        name = 'effortless-android-stdlib'
         licenses = ['Apache-2.0']
-        desc = 'A collection of Kotlin extension functions for Android development with RxJava 2.'
+        desc = "A collection of Kotlin extension functions that extend Kotlin's standard library."
         websiteUrl = "https://milkcan.io/"
         vcsUrl = 'https://github.com/bachhuberdesign/effortless-android.git'
     }
@@ -42,7 +42,6 @@ bintray {
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
-
 
     defaultConfig {
         minSdkVersion 14
@@ -70,8 +69,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }
 
 def getLocalProperty(String propertyName) {
