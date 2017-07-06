@@ -18,6 +18,7 @@ publishing {
     publications {
         Production(MavenPublication) {
             artifact("$buildDir/outputs/aar/effortless-android-stdlib-release.aar")
+            artifact(sourcesJar)
             groupId 'io.milkcan'
             artifactId 'effortless-android-stdlib'
             version '1.0.2'
@@ -80,4 +81,13 @@ def getLocalProperty(String propertyName) {
     } else {
         return ""
     }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+artifacts {
+    archives sourcesJar
 }

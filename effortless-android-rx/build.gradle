@@ -18,6 +18,7 @@ publishing {
     publications {
         Production(MavenPublication) {
             artifact("$buildDir/outputs/aar/effortless-android-rx-release.aar")
+            artifact(sourcesJar)
             groupId 'io.milkcan'
             artifactId 'effortless-android-rx'
             version '1.0.2'
@@ -61,6 +62,10 @@ android {
     }
 }
 
+configurations {
+    javadocDeps
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -83,4 +88,13 @@ def getLocalProperty(String propertyName) {
     } else {
         return ""
     }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+artifacts {
+    archives sourcesJar
 }
