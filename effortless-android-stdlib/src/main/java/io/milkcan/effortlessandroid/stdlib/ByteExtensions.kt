@@ -11,4 +11,7 @@ package io.milkcan.effortlessandroid.stdlib
  * @since 1.0.2
  */
 
+/**
+ * @return Conversion of the byte to unsigned integer.
+ */
 inline fun Byte.toUnsignedInt(): Int = this.toInt() and 0xff
