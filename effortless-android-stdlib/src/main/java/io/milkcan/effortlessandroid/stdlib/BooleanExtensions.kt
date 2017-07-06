@@ -4,6 +4,8 @@
 package io.milkcan.effortlessandroid.stdlib
 
 /**
+ * A collection of helpful functions that extend [Boolean].
+ *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
  * @version 1.0.2
  * @since 1.0.2
