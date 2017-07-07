@@ -12,10 +12,10 @@ All contributions are welcome. If you have any ideas for extensions to add, feel
 
 ## Install
 
-Add the following repository to your project level build.gradle file:
+Add JCenter to your project level build.gradle file (if you are not using it already):
 ```
-maven {
-   url 'https://dl.bintray.com/bachhuberdesign/maven/'
+repositories {
+    jcenter()
 }
 ```
 
