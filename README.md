@@ -23,17 +23,17 @@ and the dependencies you want to your module level build.gradle:
 
 Android Framework Extensions:
 ```
-compile 'io.milkcan:effortless-android:1.0.2'
+compile 'io.milkcan:effortless-android:1.0.3'
 ```
 
 Kotlin Standard Library Extensions:
 ```
-compile 'io.milkcan:effortless-android-stdlib:1.0.2'
+compile 'io.milkcan:effortless-android-stdlib:1.0.3'
 ```
 
 RxJava 2 extensions:
 ```
-compile 'io.milkcan:effortless-android-rx:1.0.2'
+compile 'io.milkcan:effortless-android-rx:1.0.3'
  
 // NOTE: RxJava 2 and RxAndroid are required to use Effortless Android Rx
 compile 'io.reactivex.rxjava2:rxjava:2.1.0'
