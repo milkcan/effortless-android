@@ -3,11 +3,13 @@
 package io.milkcan.effortlessandroid
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.os.Build
+import android.preference.PreferenceManager
 import android.support.annotation.RequiresApi
 import android.support.v4.content.ContextCompat
 import android.view.View
@@ -17,7 +19,7 @@ import android.widget.Toast
  * A collection of helpful functions that extend [Context].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.0.0
+ * @version 1.0.4
  * @since 1.0.0
  */
 
@@ -91,13 +93,13 @@ fun Context.pxToSp(px: Int): Float {
 }
 
 /**
- * Checks if permission has been granted or not.
+ * Checks if permissions have been granted or not.
  *
- * @param permission Name of the permission to check (i.e. Manifest.permission.CAMERA).
- * @return True if permission has been granted.
+ * @param permission Name of the permission(s) to check (i.e. Manifest.permission.CAMERA).
+ * @return True if all permissions have been granted.
  */
-fun Context.isPermissionGranted(permission: String): Boolean {
-    return ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
+fun Context.isPermissionsGranted(vararg permission: String): Boolean {
+    return permission.all { ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED }
 }
 
 /**
@@ -118,6 +120,8 @@ fun Context.getDrawableCompat(resourceId: Int): Drawable {
 
 /**
  * Checks if network is connected or currently in the process of connecting.
+ *
+ * Requires android.permission.ACCESS_NETWORK_STATE to call.
  *
  * @return True if the network is connected or connecting.
  */
@@ -148,3 +152,10 @@ fun Context.isLeftToRight() = this.resources.configuration.layoutDirection == Vi
  */
 @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
 fun Context.isRightToLeft() = this.resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+
+/**
+ * @return Default SharedPreferences instance for the provided context.
+ */
+fun Context.getDefaultSharedPreferences(): SharedPreferences {
+    return PreferenceManager.getDefaultSharedPreferences(this)
+}
