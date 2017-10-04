@@ -5,8 +5,8 @@ package io.milkcan.effortlessandroid
 
 /**
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.0.3
- * @since 1.0.3
+ * @version 1.0.4
+ * @since 1.0.4
  */
 
 inline fun String?.isValidEmail(): Boolean {

@@ -13,7 +13,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
-version = '1.0.3'
+version = '1.0.4'
 
 publishing {
     publications {
@@ -22,7 +22,7 @@ publishing {
             artifact(sourcesJar)
             groupId 'io.milkcan'
             artifactId 'effortless-android-stdlib'
-            version '1.0.3'
+            version '1.0.4'
         }
     }
 }
@@ -43,7 +43,7 @@ bintray {
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
         minSdkVersion 14
