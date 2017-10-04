@@ -1,7 +1,9 @@
 @file:JvmName("ContextExtensions")
+@file:Suppress("NOTHING_TO_INLINE", "unused", "MissingPermission")
 
 package io.milkcan.effortlessandroid
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
@@ -125,6 +127,7 @@ fun Context.getDrawableCompat(resourceId: Int): Drawable {
  *
  * @return True if the network is connected or connecting.
  */
+@SuppressLint("MissingPermission")
 fun Context.isNetworkConnectedOrConnecting(): Boolean {
     val manager = this.applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 

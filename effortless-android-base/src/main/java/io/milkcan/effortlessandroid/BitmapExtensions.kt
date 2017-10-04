@@ -1,4 +1,5 @@
 @file:JvmName("BitmapExtensions")
+@file:Suppress("NOTHING_TO_INLINE", "unused")
 
 package io.milkcan.effortlessandroid
 

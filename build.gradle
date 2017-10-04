@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.1.50'
+    ext.kotlin_version = '1.1.51'
     ext.plugin_version = '2.3.3'
     ext.support_library_version = '26.1.0'
 
@@ -11,7 +11,6 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$plugin_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
     }
 }
 
