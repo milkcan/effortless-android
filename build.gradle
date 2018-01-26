@@ -1,6 +1,6 @@
 buildscript {
-    ext.kotlin_version = '1.1.51'
-    ext.plugin_version = '2.3.3'
+    ext.kotlin_version = '1.2.21'
+    ext.plugin_version = '3.0.1'
     ext.support_library_version = '26.1.0'
 
     repositories {
