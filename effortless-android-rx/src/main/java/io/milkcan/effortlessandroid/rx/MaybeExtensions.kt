@@ -1,32 +1,32 @@
-@file:JvmName("SingleExtensions")
+@file:JvmName("MaybeExtensions")
 @file:Suppress("NOTHING_TO_INLINE", "unused")
 
 package io.milkcan.effortlessandroid.rx
 
-import io.reactivex.Single
+import io.reactivex.Maybe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * A collection of helpful functions that extend [Single].
+ * A collection of helpful functions that extend [Maybe].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
  * @version 1.0.5
- * @since 1.0.0
+ * @since 1.0.5
  */
 
 /**
  * @return
  */
-inline fun <T> Single<T>.defaultThreads(): Single<T> {
+inline fun <T> Maybe<T>.asyncThreads(): Maybe<T> {
     return subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
+            .observeOn(Schedulers.io())
 }
 
 /**
  * @return
  */
-inline fun <T> Single<T>.asyncThreads(): Single<T> {
+inline fun <T> Maybe<T>.defaultThreads(): Maybe<T> {
     return subscribeOn(Schedulers.io())
-            .observeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
 }

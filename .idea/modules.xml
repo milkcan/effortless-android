@@ -3,14 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/effortless-android.iml" filepath="$PROJECT_DIR$/effortless-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/effortless-android.iml" filepath="$PROJECT_DIR$/effortless-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/effortless-android-base/effortless-android-base.iml" filepath="$PROJECT_DIR$/effortless-android-base/effortless-android-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/effortless-android-base/effortless-android-base.iml" filepath="$PROJECT_DIR$/effortless-android-base/effortless-android-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/effortless-android-rx/effortless-android-rx.iml" filepath="$PROJECT_DIR$/effortless-android-rx/effortless-android-rx.iml" />
-      <module fileurl="file://$PROJECT_DIR$/effortless-android-rx/effortless-android-rx.iml" filepath="$PROJECT_DIR$/effortless-android-rx/effortless-android-rx.iml" />
       <module fileurl="file://$PROJECT_DIR$/effortless-android-stdlib/effortless-android-stdlib.iml" filepath="$PROJECT_DIR$/effortless-android-stdlib/effortless-android-stdlib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/effortless-android-stdlib/effortless-android-stdlib.iml" filepath="$PROJECT_DIR$/effortless-android-stdlib/effortless-android-stdlib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
     </modules>
   </component>

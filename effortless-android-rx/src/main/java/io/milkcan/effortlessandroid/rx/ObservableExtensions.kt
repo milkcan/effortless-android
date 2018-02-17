@@ -11,11 +11,22 @@ import io.reactivex.schedulers.Schedulers
  * A collection of helpful functions that extend [Observable].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.0.0
+ * @version 1.0.5
  * @since 1.0.0
  */
 
+/**
+ * @return
+ */
 inline fun <T> Observable<T>.defaultThreads(): Observable<T> {
     return subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+}
+
+/**
+ * @return
+ */
+inline fun <T> Observable<T>.asyncThreads(): Observable<T> {
+    return subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.io())
 }
