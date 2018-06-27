@@ -13,7 +13,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
-version = '1.0.4'
+version = '1.1.0'
 
 publishing {
     publications {
@@ -22,7 +22,7 @@ publishing {
             artifact(sourcesJar)
             groupId 'io.milkcan'
             artifactId 'effortless-android-rx'
-            version '1.0.4'
+            version '1.1.0'
         }
     }
 }
@@ -42,12 +42,12 @@ bintray {
 }
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -76,11 +76,11 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     // Kotlin
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Rx
-    compile 'io.reactivex.rxjava2:rxjava:2.1.2'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.16'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.2'
 }
 
 def getLocalProperty(String propertyName) {

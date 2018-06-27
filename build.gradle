@@ -1,7 +1,7 @@
 buildscript {
-    ext.kotlin_version = '1.2.21'
-    ext.plugin_version = '3.0.1'
-    ext.support_library_version = '26.1.0'
+    ext.kotlin_version = '1.2.50'
+    ext.plugin_version = '3.1.3'
+    ext.support_library_version = '27.1.1'
 
     repositories {
         jcenter()
