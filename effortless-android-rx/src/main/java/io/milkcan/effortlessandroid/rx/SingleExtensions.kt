@@ -11,11 +11,22 @@ import io.reactivex.schedulers.Schedulers
  * A collection of helpful functions that extend [Single].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.0.0
+ * @version 1.1.0
  * @since 1.0.0
  */
 
+/**
+ * @return
+ */
 inline fun <T> Single<T>.defaultThreads(): Single<T> {
     return subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+}
+
+/**
+ * @return
+ */
+inline fun <T> Single<T>.asyncThreads(): Single<T> {
+    return subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.io())
 }

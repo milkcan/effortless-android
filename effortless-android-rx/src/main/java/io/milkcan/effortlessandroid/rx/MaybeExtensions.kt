@@ -1,32 +1,32 @@
-@file:JvmName("ObservableExtensions")
+@file:JvmName("MaybeExtensions")
 @file:Suppress("NOTHING_TO_INLINE", "unused")
 
 package io.milkcan.effortlessandroid.rx
 
-import io.reactivex.Observable
+import io.reactivex.Maybe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * A collection of helpful functions that extend [Observable].
+ * A collection of helpful functions that extend [Maybe].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
  * @version 1.1.0
- * @since 1.0.0
+ * @since 1.1.0
  */
 
 /**
  * @return
  */
-inline fun <T> Observable<T>.defaultThreads(): Observable<T> {
+inline fun <T> Maybe<T>.asyncThreads(): Maybe<T> {
     return subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
+            .observeOn(Schedulers.io())
 }
 
 /**
  * @return
  */
-inline fun <T> Observable<T>.asyncThreads(): Observable<T> {
+inline fun <T> Maybe<T>.defaultThreads(): Maybe<T> {
     return subscribeOn(Schedulers.io())
-            .observeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
 }

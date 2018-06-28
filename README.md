@@ -4,7 +4,7 @@ Effortless Android is a curated collection of Kotlin extension functions to make
 
 ## Prerequisites
 
-Kotlin 1.1+ -- older versions should be compatible but have not been tested.
+Kotlin 1.2+
 
 ## Contributing
 
@@ -23,23 +23,23 @@ and the dependencies you want to your module level build.gradle:
 
 Android Framework Extensions:
 ```
-compile 'io.milkcan:effortless-android:1.0.4'
+compile 'io.milkcan:effortless-android:1.1.0'
 ```
 
 Kotlin Standard Library Extensions:
 ```
-compile 'io.milkcan:effortless-android-stdlib:1.0.4'
+compile 'io.milkcan:effortless-android-stdlib:1.1.0'
 ```
 
 RxJava 2 extensions:
 ```
-compile 'io.milkcan:effortless-android-rx:1.0.4'
+compile 'io.milkcan:effortless-android-rx:1.1.0'
  
 // NOTE: RxJava 2 and RxAndroid are required to use Effortless Android Rx
-compile 'io.reactivex.rxjava2:rxjava:2.1.2'
-compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+compile 'io.reactivex.rxjava2:rxjava:2.1.16'
+compile 'io.reactivex.rxjava2:rxandroid:2.0.2'
 ```
 
 ## License
 
-This project is licensed under Apache 2.0 -- [see the full license here.](https://github.com/bachhuberdesign/effortless-android/blob/master/LICENSE)
+This project is licensed under Apache 2.0 -- [see the full license here.](https://github.com/milkcan/effortless-android/blob/master/LICENSE)

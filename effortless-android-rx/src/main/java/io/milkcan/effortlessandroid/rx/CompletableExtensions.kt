@@ -11,11 +11,22 @@ import io.reactivex.schedulers.Schedulers
  * A collection of helpful functions that extend [Completable].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.0.0
+ * @version 1.1.0
  * @since 1.0.0
  */
 
+/**
+ * @return
+ */
 inline fun Completable.defaultThreads(): Completable {
     return subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+}
+
+/**
+ * @return
+ */
+inline fun Completable.asyncThreads(): Completable {
+    return subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.io())
 }

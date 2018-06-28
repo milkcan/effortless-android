@@ -4,12 +4,13 @@
 package io.milkcan.effortlessandroid
 
 import android.app.Fragment
+import android.support.v4.app.DialogFragment
 
 /**
  * A collection of helpful functions that extend [Fragment].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.0.0
+ * @version 1.1.0
  * @since 1.0.0
  */
 
@@ -52,3 +53,18 @@ inline fun Fragment.toastLong(message: String) = activity?.toast(message)
  * @param message
  */
 inline fun android.support.v4.app.Fragment.toastLong(message: String) = activity?.toast(message)
+
+/**
+ * @param allowStateLoss If true, [DialogFragment.dismissAllowingStateLoss] will be used rather
+ * than [DialogFragment.dismiss].
+ * @return True if dismiss on the [DialogFragment] was called.
+ */
+inline fun DialogFragment?.safeDismiss(allowStateLoss: Boolean = true): Boolean {
+    return if (this != null && this.isAdded) {
+        if (allowStateLoss) this.dismissAllowingStateLoss() else this.dismiss()
+
+        true
+    } else {
+        false
+    }
+}

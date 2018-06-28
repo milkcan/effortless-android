@@ -19,9 +19,9 @@ import android.database.Cursor
 fun Cursor.getBooleanFromColumn(columnName: String): Boolean {
     val columnValue = getInt(getColumnIndex(columnName))
 
-    when (columnValue) {
-        0 -> return false
-        1 -> return true
+    return when (columnValue) {
+        0 -> false
+        1 -> true
         else -> throw IndexOutOfBoundsException("$columnName value was $columnValue, expected 0 or 1.")
     }
 }
