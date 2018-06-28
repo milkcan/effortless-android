@@ -11,8 +11,8 @@ import io.reactivex.schedulers.Schedulers
  * A collection of helpful functions that extend [Maybe].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.0.5
- * @since 1.0.5
+ * @version 1.1.0
+ * @since 1.1.0
  */
 
 /**

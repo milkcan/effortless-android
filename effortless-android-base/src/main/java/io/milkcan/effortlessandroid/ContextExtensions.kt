@@ -117,7 +117,7 @@ fun Context.getColorCompat(resourceId: Int): Int {
  * @return
  */
 fun Context.getDrawableCompat(resourceId: Int): Drawable {
-    return ContextCompat.getDrawable(this, resourceId)
+    return ContextCompat.getDrawable(this, resourceId)!!
 }
 
 /**

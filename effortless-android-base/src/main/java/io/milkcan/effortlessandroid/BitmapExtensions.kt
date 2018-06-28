@@ -57,7 +57,6 @@ fun Bitmap.mirror(): Bitmap {
 /**
  * Scales and center crops a Bitmap to exactly [newWidth] x [newHeight].
  *
- * @param source
  * @param newWidth The width of the finished Bitmap
  * @param newHeight The height of the finished Bitmap
  * @return The scaled and cropped bitmap
