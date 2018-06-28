@@ -7,12 +7,19 @@ import io.reactivex.disposables.Disposable
 
 /**
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.1.0
+ * @version 1.1.1
  * @since 1.1.0
  */
 
-inline fun Disposable?.safeDispose() {
-    if (this != null && !this.isDisposed) {
+/**
+ * @return True if the [Disposable] was disposed by this call. False if the Disposable is null or if
+ * it was previously disposed before calling this function.
+ */
+inline fun Disposable?.safeDispose(): Boolean {
+    return if (this != null && !this.isDisposed) {
         this.dispose()
+        true
+    } else {
+        false
     }
 }
