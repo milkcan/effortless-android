@@ -10,49 +10,49 @@ import android.support.v4.app.DialogFragment
  * A collection of helpful functions that extend [Fragment].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.1.0
+ * @version 1.1.1
  * @since 1.0.0
  */
 
 /**
- * @param resourceId
+ * @param resourceId The ID of the String resource to display.
  */
 inline fun Fragment.toast(resourceId: Int) = activity?.toast(resourceId)
 
 /**
- * @param resourceId
+ * @param resourceId The ID of the String resource to display.
  */
 inline fun android.support.v4.app.Fragment.toast(resourceId: Int) = activity?.toast(resourceId)
 
 /**
- * @param message
+ * @param message The message to display.
  */
-inline fun Fragment.toast(message: String) = activity?.toast(message)
+inline fun Fragment.toast(message: String?) = activity?.toast(message)
 
 /**
- * @param message
+ * @param message The message to display.
  */
-inline fun android.support.v4.app.Fragment.toast(message: String) = activity?.toast(message)
+inline fun android.support.v4.app.Fragment.toast(message: String?) = activity?.toast(message)
 
 /**
- * @param resourceId
+ * @param resourceId The ID of the String resource to display.
  */
 inline fun Fragment.toastLong(resourceId: Int) = activity?.toast(resourceId)
 
 /**
- * @param resourceId
+ * @param resourceId The ID of the String resource to display.
  */
 inline fun android.support.v4.app.Fragment.toastLong(resourceId: Int) = activity?.toast(resourceId)
 
 /**
- * @param message
+ * @param message The message to display.
  */
-inline fun Fragment.toastLong(message: String) = activity?.toast(message)
+inline fun Fragment.toastLong(message: String?) = activity?.toast(message)
 
 /**
- * @param message
+ * @param message The message to display.
  */
-inline fun android.support.v4.app.Fragment.toastLong(message: String) = activity?.toast(message)
+inline fun android.support.v4.app.Fragment.toastLong(message: String?) = activity?.toast(message)
 
 /**
  * @param allowStateLoss If true, [DialogFragment.dismissAllowingStateLoss] will be used rather

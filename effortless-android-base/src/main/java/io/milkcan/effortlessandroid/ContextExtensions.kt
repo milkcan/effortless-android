@@ -21,36 +21,36 @@ import android.widget.Toast
  * A collection of helpful functions that extend [Context].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.0.4
+ * @version 1.1.1
  * @since 1.0.0
  */
 
 /**
- * @param resourceId
+ * @param resourceId The ID of the String resource to display.
  */
 fun Context.toast(resourceId: Int) {
     Toast.makeText(this, resourceId, Toast.LENGTH_SHORT).show()
 }
 
 /**
- * @param message
+ * @param message The message to display.
  */
-fun Context.toast(message: String) {
-    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+fun Context.toast(message: String?) {
+    message?.let { Toast.makeText(this, it, Toast.LENGTH_SHORT).show() }
 }
 
 /**
- * @param resourceId
+ * @param resourceId The ID of the String resource to display.
  */
 fun Context.toastLong(resourceId: Int) {
     Toast.makeText(this, resourceId, Toast.LENGTH_LONG).show()
 }
 
 /**
- * @param message
+ * @param message The message to display.
  */
-fun Context.toastLong(message: String) {
-    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+fun Context.toastLong(message: String?) {
+    message?.let { Toast.makeText(this, it, Toast.LENGTH_LONG).show() }
 }
 
 /**
