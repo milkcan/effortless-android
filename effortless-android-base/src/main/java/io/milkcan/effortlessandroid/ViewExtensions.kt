@@ -10,7 +10,7 @@ import io.milkcan.effortlessandroid.adapter.DelayedOnClickListener
  * A collection of helpful functions that extend [View].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.0.0
+ * @version 1.1.0
  * @since 1.0.0
  */
 
