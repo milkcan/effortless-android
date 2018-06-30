@@ -7,7 +7,7 @@ import android.app.Fragment
 import android.support.v4.app.DialogFragment
 
 /**
- * A collection of helpful functions that extend [Fragment].
+ * A collection of helper extensions for Fragments..
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
  * @version 1.1.1

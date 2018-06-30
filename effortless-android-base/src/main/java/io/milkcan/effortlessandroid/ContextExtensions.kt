@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.os.Build
@@ -26,40 +27,59 @@ import android.widget.Toast
  */
 
 /**
+ * Uses the current [Context] to call [Toast.makeText] with a duration of [Toast.LENGTH_SHORT].
+ *
  * @param resourceId The ID of the String resource to display.
+ * @see [Context.toastLong]
  */
 fun Context.toast(resourceId: Int) {
     Toast.makeText(this, resourceId, Toast.LENGTH_SHORT).show()
 }
 
 /**
+ * Uses the current [Context] to call [Toast.makeText] with a duration of [Toast.LENGTH_SHORT]. If
+ * [message] is null, this call will be ignored.
+ *
  * @param message The message to display.
+ * @see [Context.toastLong]
  */
 fun Context.toast(message: String?) {
     message?.let { Toast.makeText(this, it, Toast.LENGTH_SHORT).show() }
 }
 
 /**
+ * Uses the current [Context] to call [Toast.makeText] with a duration of [Toast.LENGTH_LONG].
+ *
  * @param resourceId The ID of the String resource to display.
+ * @see [Context.toast]
  */
 fun Context.toastLong(resourceId: Int) {
     Toast.makeText(this, resourceId, Toast.LENGTH_LONG).show()
 }
 
 /**
+ * Uses the current [Context] to call [Toast.makeText] with a duration of [Toast.LENGTH_LONG]. If
+ * [message] is null, this call will be ignored.
+ *
  * @param message The message to display.
+ * @see [Context.toast]
  */
 fun Context.toastLong(message: String?) {
     message?.let { Toast.makeText(this, it, Toast.LENGTH_LONG).show() }
 }
 
 /**
- * @param key
- * @return
+ * @param key The key of the resource.
+ * @return The string resource or null if the string resource could not be found.
  */
-fun Context.getStringResourceByName(key: String): String {
+fun Context.getStringResourceByName(key: String): String? {
     val resourceId = this.resources.getIdentifier(key, "string", this.packageName)
-    return this.getString(resourceId)
+
+    return try {
+        this.getString(resourceId)
+    } catch (ex: Resources.NotFoundException) {
+        null
+    }
 }
 
 /**
@@ -135,23 +155,23 @@ fun Context.isNetworkConnectedOrConnecting(): Boolean {
 }
 
 /**
- * @return
+ * @return True if the device's current orientation is landscape.
  */
 fun Context.isLandscape() = this.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
 /**
- * @return
+ * @return True if the device's current orientation is portrait.
  */
 fun Context.isPortrait() = this.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
 
 /**
- * @return
+ * @return True if the device's current layout direction is left to right.
  */
 @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
 fun Context.isLeftToRight() = this.resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_LTR
 
 /**
- * @return
+ * @return True if the device's current layout direction is right to left.
  */
 @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
 fun Context.isRightToLeft() = this.resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL

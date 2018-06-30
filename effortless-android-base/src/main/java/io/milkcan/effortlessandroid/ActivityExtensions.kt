@@ -17,7 +17,7 @@ import android.view.inputmethod.InputMethodManager
  */
 
 /**
- *
+ * Hides the software keyboard if it is currently showing.
  */
 fun Activity.hideKeyboard() {
     val inputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager

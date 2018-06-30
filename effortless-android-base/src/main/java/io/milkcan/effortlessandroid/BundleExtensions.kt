@@ -14,7 +14,10 @@ import android.os.Bundle
  */
 
 /**
- * @param tag
+ * Iterate through all keys in a Bundle (if any), and prints the key:value pair to debug log.
+ * Useful for discovering unknown values that are passed in an Intent.
+ *
+ * @param tag Tag for the debug output log. Defaults to "Bundle Extras".
  */
 inline fun Bundle?.printExtras(tag: String = "Bundle Extras") {
     this?.keySet()?.forEach { key ->
