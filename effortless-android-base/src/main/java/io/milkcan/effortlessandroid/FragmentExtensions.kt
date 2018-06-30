@@ -55,6 +55,8 @@ inline fun Fragment.toastLong(message: String?) = activity?.toast(message)
 inline fun android.support.v4.app.Fragment.toastLong(message: String?) = activity?.toast(message)
 
 /**
+ * Helper to safely dismiss a [DialogFragment] if it is not null and is currently added to the view.
+ *
  * @param allowStateLoss If true, [DialogFragment.dismissAllowingStateLoss] will be used rather
  * than [DialogFragment.dismiss].
  * @return True if dismiss on the [DialogFragment] was called.

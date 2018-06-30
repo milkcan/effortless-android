@@ -8,7 +8,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
- * A collection of helpful functions that extend [Observable].
+ * A collection of helper extensions for [Observable].
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
  * @version 1.1.0
@@ -16,7 +16,10 @@ import io.reactivex.schedulers.Schedulers
  */
 
 /**
- * @return
+ * Sets the [Observable] stream to subscribe on [Schedulers.io] and observe on
+ * [AndroidSchedulers.mainThread].
+ *
+ * @return The new [Observable] instance.
  */
 inline fun <T> Observable<T>.defaultThreads(): Observable<T> {
     return subscribeOn(Schedulers.io())
@@ -24,7 +27,9 @@ inline fun <T> Observable<T>.defaultThreads(): Observable<T> {
 }
 
 /**
- * @return
+ * Sets the [Observable] stream to subscribe and observe on [Schedulers.io],
+ *
+ * @return The new [Observable] instance.
  */
 inline fun <T> Observable<T>.asyncThreads(): Observable<T> {
     return subscribeOn(Schedulers.io())

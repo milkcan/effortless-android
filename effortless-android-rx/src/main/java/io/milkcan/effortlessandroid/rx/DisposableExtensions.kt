@@ -6,14 +6,17 @@ package io.milkcan.effortlessandroid.rx
 import io.reactivex.disposables.Disposable
 
 /**
+ * A collection of helper extensions for [Disposable].
+ *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
  * @version 1.1.1
  * @since 1.1.0
  */
 
 /**
- * @return True if the [Disposable] was disposed by this call. False if the Disposable is null or if
- * it was previously disposed before calling this function.
+ * Helper to safely dispose a [Disposable] if it is not null and is not currently disposed.
+ *
+ * @return True if the [Disposable] was disposed by this call.
  */
 inline fun Disposable?.safeDispose(): Boolean {
     return if (this != null && !this.isDisposed) {
