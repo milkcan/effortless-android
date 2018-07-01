@@ -8,12 +8,14 @@ buildscript {
     }
 }
 
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.bintray'
+apply {
+    plugin 'com.android.library'
+    plugin 'kotlin-android'
+    plugin 'maven-publish'
+    plugin 'com.jfrog.bintray'
+}
 
-version = '1.1.0'
+version = '1.1.1'
 
 publishing {
     publications {
@@ -22,7 +24,7 @@ publishing {
             artifact(sourcesJar)
             groupId 'io.milkcan'
             artifactId 'effortless-android'
-            version '1.1.0'
+            version '1.1.1'
         }
     }
 }

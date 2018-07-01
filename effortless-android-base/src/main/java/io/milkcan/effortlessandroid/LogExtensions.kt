@@ -6,7 +6,7 @@ package io.milkcan.effortlessandroid
 import android.util.Log
 
 /**
- * A collection of helpful functions that extend [Log].
+ * A collection of helper extensions for Log.
  *
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
  * @version 1.0.0

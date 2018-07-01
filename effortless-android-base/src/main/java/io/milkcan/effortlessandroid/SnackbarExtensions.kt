@@ -12,36 +12,108 @@ import android.view.accessibility.AccessibilityManager
 
 /**
  * @author Eric Bachhuber (bachhuberdesign@gmail.com)
- * @version 1.0.4
+ * @version 1.1.1
  * @since 1.0.4
  */
 
-fun View.snack(message: String, length: Int = Snackbar.LENGTH_LONG, function: (Snackbar.() -> Unit) = {}) {
-    val snack = Snackbar.make(this, message, length).apply { animationBugWorkaround(this) }
-    snack.function()
-    snack.show()
+/**
+ * Helper function to easily display a [Snackbar] in the given [View]. If a non-null [actionText]
+ * parameter is passed, the [Snackbar] will be displayed with an action that runs function [action]
+ * when clicked.
+ *
+ * @param message The message to display in the [Snackbar].
+ * @param length The length to display the [Snackbar]. Valid values are [Snackbar.LENGTH_SHORT],
+ * [Snackbar.LENGTH_LONG], and [Snackbar.LENGTH_INDEFINITE]
+ * @param actionText The text to display for the [Snackbar]'s action. Defaults to null.
+ * @param action The function to run when the [Snackbar] action is clicked.
+ */
+fun View.snack(
+        message: String,
+        length: Int = Snackbar.LENGTH_LONG,
+        actionText: String? = null,
+        action: (() -> Unit) = {}
+): Snackbar {
+    val snackbar = Snackbar.make(this, message, length).apply { animationBugWorkaround(this) }
+
+    actionText?.let { snackbar.setAction(it) { action() } }
+
+    snackbar.show()
+
+    return snackbar
 }
 
-fun View.snack(@StringRes message: Int, length: Int = Snackbar.LENGTH_LONG, function: (Snackbar.() -> Unit) = {}) {
-    snack(resources.getString(message), length, function)
+/**
+ * Helper function to easily display a [Snackbar] in the given [View]. If a non-null [actionText]
+ * parameter is passed, the [Snackbar] will be displayed with an action that runs function [action]
+ * when clicked.
+ *
+ * @param message The message to display in the [Snackbar].
+ * @param length The length to display the [Snackbar]. Valid values are [Snackbar.LENGTH_SHORT],
+ * [Snackbar.LENGTH_LONG], and [Snackbar.LENGTH_INDEFINITE]
+ * @param actionText The text to display for the [Snackbar]'s action. Defaults to null.
+ * @param action The function to run when the [Snackbar] action is clicked.
+ */
+fun View.snack(
+        @StringRes message: Int,
+        length: Int = Snackbar.LENGTH_LONG,
+        actionText: String? = null,
+        action: (() -> Unit) = {}
+): Snackbar {
+    return snack(resources.getString(message), length, actionText, action)
 }
 
-fun Fragment.snack(message: String, length: Int = Snackbar.LENGTH_LONG, function: (Snackbar.() -> Unit) = {}) {
+/**
+ * Helper function to easily display a [Snackbar] in the given [Fragment]. If a non-null [actionText]
+ * parameter is passed, the [Snackbar] will be displayed with an action that runs function [action]
+ * when clicked.
+ *
+ * @param message The message to display in the [Snackbar].
+ * @param length The length to display the [Snackbar]. Valid values are [Snackbar.LENGTH_SHORT],
+ * [Snackbar.LENGTH_LONG], and [Snackbar.LENGTH_INDEFINITE]
+ * @param actionText The text to display for the [Snackbar]'s action. Defaults to null.
+ * @param action The function to run when the [Snackbar] action is clicked.
+ */
+fun Fragment.snack(
+        message: String,
+        length: Int = Snackbar.LENGTH_LONG,
+        actionText: String? = null,
+        action: (() -> Unit) = {}
+): Snackbar? {
     if (this.view == null) {
-        return
+        return null
     }
 
-    val snack = Snackbar.make(this.view!!, message, length).apply { animationBugWorkaround(this) }
-    snack.function()
-    snack.show()
+    val snackbar = Snackbar.make(this.view!!, message, length).apply { animationBugWorkaround(this) }
+
+    actionText?.let { snackbar.setAction(it) { action() } }
+
+    snackbar.show()
+
+    return snackbar
 }
 
-fun Fragment.snack(@StringRes message: Int, length: Int = Snackbar.LENGTH_LONG, function: (Snackbar.() -> Unit) = {}) {
+/**
+ * Helper function to easily display a [Snackbar] in the given [Fragment]. If a non-null [actionText]
+ * parameter is passed, the [Snackbar] will be displayed with an action that runs function [action]
+ * when clicked.
+ *
+ * @param message The message to display in the [Snackbar].
+ * @param length The length to display the [Snackbar]. Valid values are [Snackbar.LENGTH_SHORT],
+ * [Snackbar.LENGTH_LONG], and [Snackbar.LENGTH_INDEFINITE]
+ * @param actionText The text to display for the [Snackbar]'s action. Defaults to null.
+ * @param action The function to run when the [Snackbar] action is clicked.
+ */
+fun Fragment.snack(
+        @StringRes message: Int,
+        length: Int = Snackbar.LENGTH_LONG,
+        actionText: String? = null,
+        action: (() -> Unit) = {}
+): Snackbar? {
     if (this.view == null) {
-        return
+        return null
     }
 
-    snack(resources.getString(message), length, function)
+    return snack(resources.getString(message), length, actionText, action)
 }
 
 /**
